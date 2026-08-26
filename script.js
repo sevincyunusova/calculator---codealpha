@@ -7,9 +7,30 @@ const clearButton = document.getElementById("clear");
 let firstNumber = "";
 let operator = "";
 let secondNumber = "";
+
 numberButtons.forEach((button) => {
     button.addEventListener("click", () => {
         const number = button.dataset.number;
+
+        if (number === ".") {
+            if (operator === "") {
+                if (firstNumber.includes(".")) {
+                    return;
+                }
+
+                firstNumber = firstNumber === "" ? "0." : firstNumber + ".";
+                display.value = firstNumber;
+            } else {
+                if (secondNumber.includes(".")) {
+                    return;
+                }
+
+                secondNumber = secondNumber === "" ? "0." : secondNumber + ".";
+                display.value = secondNumber;
+            }
+
+            return;
+        }
 
         if (operator === "") {
             firstNumber += number;
@@ -20,6 +41,7 @@ numberButtons.forEach((button) => {
         }
     });
 });
+
 operatorButtons.forEach((button) => {
     button.addEventListener("click", () => {
         if (firstNumber === "") {
@@ -29,6 +51,7 @@ operatorButtons.forEach((button) => {
         operator = button.dataset.operator;
     });
 });
+
 function calculate() {
     const num1 = Number(firstNumber);
     const num2 = Number(secondNumber);
@@ -53,6 +76,7 @@ function calculate() {
             return num2;
     }
 }
+
 equalsButton.addEventListener("click", () => {
     if (firstNumber === "" || operator === "" || secondNumber === "") {
         return;
@@ -66,6 +90,7 @@ equalsButton.addEventListener("click", () => {
     secondNumber = "";
     operator = "";
 });
+
 clearButton.addEventListener("click", () => {
     firstNumber = "";
     secondNumber = "";
