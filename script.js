@@ -29,3 +29,27 @@ operatorButtons.forEach((button) => {
         operator = button.dataset.operator;
     });
 });
+function calculate() {
+    const num1 = Number(firstNumber);
+    const num2 = Number(secondNumber);
+
+    switch (operator) {
+        case "+":
+            return num1 + num2;
+
+        case "-":
+            return num1 - num2;
+
+        case "*":
+            return num1 * num2;
+
+        case "/":
+            if (num2 === 0) {
+                return "Error";
+            }
+            return num1 / num2;
+
+        default:
+            return num2;
+    }
+}
