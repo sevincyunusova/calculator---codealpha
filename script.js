@@ -66,3 +66,9 @@ equalsButton.addEventListener("click", () => {
     secondNumber = "";
     operator = "";
 });
+clearButton.addEventListener("click", () => {
+    firstNumber = "";
+    secondNumber = "";
+    operator = "";
+    display.value = "0";
+});
