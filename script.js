@@ -7,3 +7,16 @@ const clearButton = document.getElementById("clear");
 let firstNumber = "";
 let operator = "";
 let secondNumber = "";
+numberButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const number = button.dataset.number;
+
+        if (operator === "") {
+            firstNumber += number;
+            display.value = firstNumber;
+        } else {
+            secondNumber += number;
+            display.value = secondNumber;
+        }
+    });
+});
