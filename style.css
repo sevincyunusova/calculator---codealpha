@@ -1,50 +1,51 @@
 * {
     margin: 0;
     padding: 0;
-    box- sizing: border - box;
+    box-sizing: border-box;
 }
 
 body {
-    min - height: 100vh;
+    min-height: 100vh;
     display: flex;
-    justify - content: center;
-    align - items: center;
+    justify-content: center;
+    align-items: center;
     background: #f3f4f6;
-    font - family: Arial, sans - serif;
+    font-family: Arial, sans-serif;
 }
 
 .calculator {
     width: 320px;
     padding: 20px;
     background: #1f2937;
-    border - radius: 16px;
-    box - shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .display {
-    width: 100 %;
+    width: 100%;
     height: 70px;
-    margin - bottom: 15px;
+    margin-bottom: 15px;
     padding: 10px;
     border: none;
-    border - radius: 10px;
+    border-radius: 10px;
     background: #111827;
     color: white;
-    font - size: 32px;
-    text - align: right;
+    font-size: 32px;
+    text-align: right;
+    outline: none;
 }
 
 .buttons {
     display: grid;
-    grid - template - columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
 
 .btn {
     height: 60px;
     border: none;
-    border - radius: 10px;
-    font - size: 22px;
+    border-radius: 10px;
+    font-size: 22px;
     cursor: pointer;
     background: #374151;
     color: white;
@@ -65,11 +66,11 @@ body {
 
 .equals {
     background: #10b981;
-    grid - row: span 2;
+    grid-row: span 2;
 }
 
 .zero {
-    grid - column: span 2;
+    grid-column: span 2;
 }
 
 .decimal {
