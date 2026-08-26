@@ -53,3 +53,16 @@ function calculate() {
             return num2;
     }
 }
+equalsButton.addEventListener("click", () => {
+    if (firstNumber === "" || operator === "" || secondNumber === "") {
+        return;
+    }
+
+    const result = calculate();
+
+    display.value = result;
+
+    firstNumber = result.toString();
+    secondNumber = "";
+    operator = "";
+});
