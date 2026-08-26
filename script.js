@@ -20,3 +20,12 @@ numberButtons.forEach((button) => {
         }
     });
 });
+operatorButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        if (firstNumber === "") {
+            return;
+        }
+
+        operator = button.dataset.operator;
+    });
+});
