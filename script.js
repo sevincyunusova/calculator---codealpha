@@ -97,3 +97,34 @@ clearButton.addEventListener("click", () => {
     operator = "";
     display.value = "0";
 });
+
+const plusMinusButton = document.getElementById("plus-minus");
+const percentButton = document.getElementById("percent");
+
+plusMinusButton.addEventListener("click", () => {
+    if (operator === "") {
+        if (firstNumber !== "") {
+            firstNumber = (Number(firstNumber) * -1).toString();
+            display.value = firstNumber;
+        }
+    } else {
+        if (secondNumber !== "") {
+            secondNumber = (Number(secondNumber) * -1).toString();
+            display.value = secondNumber;
+        }
+    }
+});
+
+percentButton.addEventListener("click", () => {
+    if (operator === "") {
+        if (firstNumber !== "") {
+            firstNumber = (Number(firstNumber) / 100).toString();
+            display.value = firstNumber;
+        }
+    } else {
+        if (secondNumber !== "") {
+            secondNumber = (Number(secondNumber) / 100).toString();
+            display.value = secondNumber;
+        }
+    }
+});
